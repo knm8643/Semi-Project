@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            /*컨텐츠 넓이지정*/
+            position: relative;
+            width: 600px;
+        }
+
+        .slides {
+            /*슬라이드 아이템이 나올 뼈대 지정*/
+            width: 600px;
+            height: 300px;
+            position: relative;
+
+        }
+
+        .slide_item {
+            /*슬라이드 아이템을 absolute로 겹쳐놓고 투명하게 하기*/
+            position: absolute;
+            width: 600px;
+            height: 300px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .ontheSlide {
+            /*현재 아이템에 붙여줄 클래스*/
+            opacity: 1;
+            transition: all 0.3s;
+        }
+
+        .ontheThumbnail {
+            /*현재 썸네일에 붙여줄 클래스*/
+            border: 1px dashed red;
+        }
+
+        .nextButton,
+        .prevButton {
+            /*다음,이전 버튼을 드래그되지 않게 방지해주기*/
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .nextButton {
+            /*다음 버튼을 오른쪽으로 보내기*/
+            float: right;
+        }
+
+        .prevButton {
+            /*왼쪽 버튼을 왼쪽으로 보내기*/
+            float: left;
+        }
+
+        .Thumbnail {
+            /*썸네일 아이템을 감쌀 뼈대*/
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            bottom: 0px;
+            justify-content: center;
+        }
+
+        .slide_item:nth-of-type(1),
+        .thumbnail_item:nth-of-type(1) {
+            /*예제를 위해 썸네일 아이템들의 색깔을 구분*/
+            background: yellow;
+        }
+
+        .slide_item:nth-of-type(2),
+        .thumbnail_item:nth-of-type(2) {
+            background: blue;
+        }
+
+        .slide_item:nth-of-type(3),
+        .thumbnail_item:nth-of-type(3) {
+            background: red;
+        }
+
+        .slide_item:nth-of-type(4),
+        .thumbnail_item:nth-of-type(4) {
+            background: orange;
+        }
+
+        .slide_item:nth-of-type(5),
+        .thumbnail_item:nth-of-type(5) {
+            background: black;
+        }
+
+        .slide_item:nth-of-type(6),
+        .thumbnail_item:nth-of-type(6) {
+            background: green;
+        }
+
+        .thumbnail_item {
+            /*썸네일 아이템의 길이 설정*/
+            width: 98px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!--전체를 감쌀 뼈대-->
+        <div class="slides">
+            <!--슬라이드 아이템을 감쌀 뼈대-->
+            <div class="slide_item"><img src="img1.png"></div>
+            <!--슬라이드될 아이템들 -->
+            <div class="slide_item"><img src="img2.png"></div>
+            <div class="slide_item"><img src="img3.png"></div>
+            <div class="slide_item"></div>
+            <div class="slide_item"></div>
+            <div class="slide_item"></div>
+        </div>
+        <span class="nextButton">▶</span>
+        <!--다음 버튼 -->
+        <span class="prevButton">◀</span>
+        <!--이전 버튼 -->
+        <div class="Thumbnail">
+            <!--썸네일을 감쌀 뼈대 -->
+            <div class="thumbnail_item"></div>
+            <!--썸네일 아이템들 -->
+            <div class="thumbnail_item"></div>
+            <div class="thumbnail_item"></div>
+            <div class="thumbnail_item"></div>
+            <div class="thumbnail_item"></div>
+            <div class="thumbnail_item"></div>
+        </div>
+    </div>
+    <script>
+        function sliderOn() {
+            const slides = document.querySelector('.slides'); // 슬라이드뼈대 감지
+            const Content = document.querySelector('.Thumbnail'); //썸네일 뼈대 감지
+            const item = slides.getElementsByClassName('slide_item'); // 슬라이드 아이템 획득
+            const thumbnail = Content.getElementsByClassName('thumbnail_item'); //썸네일 아이템 획득
+
+            const firstEle = item[0]; // 첫번째 슬라이드 아이템
+            const firstThumb = thumbnail[0]; // 첫번째 썸네일 아이템
+            firstEle.classList.add('ontheSlide'); //첫번째 슬라이드 아이템에 ontheSlide 클래스 추가
+            firstThumb.classList.add('ontheThumbnail'); // 첫번째 썸네일 아이템에 ontheThumbnail 클래스 추가
+            const gogogo = setInterval(sliderGo, 4000); // 4초마다 함수 sliderGo 함수 발동시키기
+            function sliderGo() {
+
+                const currentItem = document.querySelector('.ontheSlide'); // 현재 활성화된 슬라이드 아이템 감지
+                const currentThumb = document.querySelector('.ontheThumbnail'); // 현재 활성화된 썸네일 아이템 감지
+                currentItem.classList.remove('ontheSlide') //현재 활성화된 슬라이드 아이템 비활성화
+                currentThumb.classList.remove('ontheThumbnail') // 현재 활성화된 썸네일 아이템 비활성화
+
+                if (!currentItem.nextElementSibling) { // 만약 마지막 슬라이드 아이템이라면
+                    item[0].classList.add('ontheSlide') //첫번째 아이템을 활성화
+                    thumbnail[0].classList.add('ontheThumbnail') // 첫번째 썸네일을 활성화
+                }
+                else { // 그 외의 경우
+                    currentItem.nextElementSibling.classList.add('ontheSlide') //다음 엘리먼트를 활성화
+                    currentThumb.nextElementSibling.classList.add('ontheThumbnail') //다음 썸네일을 활성화
+                }
+            }
+            const nextButton = document.querySelector('.nextButton');//다음버튼 감지
+            const prevButton = document.querySelector('.prevButton');//이전버튼 감지
+            nextButton.addEventListener('click', function () {//다음 버튼을 누른다면
+                clearInterval(gogogo)//자동이동을 중지하고
+                sliderGo();//수동으로 다음이동
+            })
+            prevButton.addEventListener('click', function () {//이전 버튼을 누른다면
+                clearInterval(gogogo)//자동이동을 중지하고
+                sliderGo('1');//수동으로 이전 이동
+            })
+        }
+        sliderOn();
+    </script>
+
+
+
+</body>
+
+</html>
+
+  

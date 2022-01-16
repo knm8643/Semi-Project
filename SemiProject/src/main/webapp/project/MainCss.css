@@ -1,0 +1,157 @@
+body{
+    font-family: 'Noto Sans KR';
+    background-color : #fff;
+}
+body, ul, li {
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    color: inherit;
+    color: inherit;
+}
+.nav_con {
+    position: fixed;
+    width: 100%;
+    padding: 0px 12px;
+    text-align: center;
+    background-color: red;
+    justify-content: space-between;
+    z-index:10;
+    
+}
+.nav_con ul {
+    background-color:wheat;
+}
+
+.nav_con > ul {
+    display:inline-block;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.nav_con > ul > li {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    width: 150px;
+    text-align: center;
+}
+
+.nav_con > ul > li > a {
+    padding: 10px;
+    display: block;
+    line-height: 60px;
+}
+
+.nav_con > ul > li:hover > a {
+    background-color: orange;
+    color: white;
+}
+#nav_logo{
+    float: left;
+    display: block;
+    height: 75px;
+    padding-left: 20px;
+}
+.nav_con ul li a:hover{
+    background-color:inherit;
+    color: white;
+    display: block;
+    background-color: orange;
+}
+
+.nav_con > ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav_con li:hover > ul {
+    display: block;
+}
+
+.nav_con ul ul li{
+    height: 50px;
+    line-height: 49px;
+}
+
+.nav_h > a:hover{
+    color: white;
+}
+#nav_login > li{
+    position:absolute;
+    right: 32px;
+    top: 0;
+    font-size: 15px;
+}
+.nav_toogle > i{
+    position: static;
+    display: none;
+    font-size: 30px;
+    right: 80px;
+    color: orange;
+}
+
+@media screen and (max-width: 1110px ) {
+    .nav_con {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    #nav_menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #nav_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav_con > ul ul {
+        position: relative;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        color: white;
+        background-color: orange;
+    }
+
+    #nav_login > li{
+        position: relative;
+        width: 100%;
+        padding-left: 42px;
+    }
+    #nav_login{
+        display: none;
+        position:relative;
+        top: 100%;
+        left: 2%;
+        width: 100%;
+        
+    }
+    #nav_logo{
+    float: none;
+    display: block;
+    height: 75px;
+    padding-left: 20px;
+    }
+
+    .nav_toogle > i{
+        position: absolute;
+        top: 32px;
+        display: block;
+    }
+    #nav_login.acctive,
+    #nav_menu.acctive {
+        display: block;
+    }
+}

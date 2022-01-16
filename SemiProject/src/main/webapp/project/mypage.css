@@ -1,0 +1,381 @@
+		@charset "UTF-8";
+
+		.main_mypage {
+			text-align: center;
+		}
+
+		#wellcome {
+			height: 100px;
+			display: inline-block;
+		}
+
+		.menu_mypage {
+			background-color: wheat;
+			float: left;
+			border-right: 1px solid black;
+			padding: auto;
+			margin: auto;
+		}
+
+		.con_mypage {
+			padding: auto;
+			margin: auto;
+		}
+
+		#first_menu {
+			text-align: center;
+			height: 100px;
+		}
+
+		#two_menu {
+			position: relative;
+			top: 15px;
+			left: 15px;
+			height: 70px;
+		}
+
+		#point {
+			font-size: 18px;
+			position: relative;
+			left: 11px;
+			bottom: 5px;
+		}
+
+		#point:hover {
+			font-style: oblique;
+		}
+
+
+		#left {
+			display: inline-block;
+			width: 80%;
+			padding: 5px;
+			margin: 5px;
+			text-align: left;
+			padding: 5px;
+		}
+
+		#food_list {
+			display: inline-block;
+			width: 80%;
+			border-radius: 5px;
+			border: 1px solid black;
+			text-align: left;
+		}
+
+		#body_img {
+			float: left;
+			padding: 12px;
+			margin: 19px;
+			text-align: center;
+			border-radius: 18px;
+			border: 1px solid black;
+			width: 200px;
+			height: 150px;
+			display: inline-block;
+		}
+
+		#body_img:hover {
+			cursor: pointer;
+			background-color: green;
+			color: white;
+
+		}
+
+		#map_num {
+			border-radius: 18px;
+			font-size: 15pt;
+			color: white;
+			background-color: black;
+			border: 1px solid black;
+		}
+
+		#list_map {
+			border: 5px double black;
+			display: inline-block;
+			border-radius: 10px;
+			text-align: center;
+		}
+
+		#map_lists {
+			top: 5px;
+			position: relative;
+			text-align: center;
+			border: 1px solid white;
+			height: 500px;
+			width: 1020px;
+			display: inline-block;
+			border-radius: 18px;
+		}
+
+		#food_list:hover {
+			cursor: pointer;
+			background-color: blue;
+			color: white;
+		}
+
+		#buck {
+			background-color: white;
+			border: 1px solid black;
+		}
+
+
+		/* 구분선  */
+		#wellcome {
+			line-height: 100pt;
+			font-size: 32pt;
+		}
+
+
+		#map_ser {
+			text-align: center;
+		}
+
+		#map_ser button {
+			width: 100pt;
+			height: 25pt;
+			font-size: 15pt;
+			background-color: rgba(0, 0, 0, 0);
+
+
+		}
+
+		#map_ser select {
+			text-align: left;
+			width: 130pt;
+			font-size: 15pt;
+
+		}
+
+
+
+		#back {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 170px;
+			background-color: rgb(207, 140, 116);
+			content: "";
+		}
+
+		#section_contents {
+			position: relative;
+			z-index: 1;
+			padding: 40px 0 17px;
+			width: 100%;
+			background-color: #f8fafc;
+		}
+
+		#inner {
+			position: relative;
+			z-index: 5;
+			margin: 0 auto;
+			width: 1260px;
+			border-radius: 2px;
+			background-color: #fff;
+			box-shadow: 0 10px 30px 0 rgb(72 118 239 / 10%);
+		}
+
+		#wrap_service {
+			position: relative;
+			padding: 24px 32px;
+			width: 1257px;
+			box-sizing: border-box;
+		}
+
+		#est {
+			border-top-width: 0px;
+			border-right-width: 0px;
+			border-bottom-width: 0px;
+			border-left-width: 0px;
+			border-top-style: solid;
+			border-right-style: solid;
+			border-bottom-style: solid;
+			border-left-style: solid;
+			width: 792px;
+			aspect-ratio: auto 792 / 60;
+			height: 60px;
+		}
+
+		#ad {
+			background-color: #f8fafc;
+			overflow: hidden;
+			margin: 32px auto 0;
+			width: 792px;
+			height: 60px;
+			text-align: center;
+		}
+
+		#section_banner {
+			position: relative;
+			z-index: 1;
+		}
+
+		#product {
+			position: relative;
+			margin: 0 auto;
+			width: 1260px;
+		}
+
+		#srevice_container {
+			margin: 0;
+			padding: 0;
+			font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+		}
+
+
+		#top {
+			line-height: 50pt;
+			height: 50px;
+			margin: 0;
+			padding: 0;
+			font-family: "Malgun Gothic", dotum, gulim, sans-serif;
+		}
+
+		#wrap_card {
+			overflow: hidden;
+			width: 1200px;
+			height: 100%;
+		}
+
+		#basic {
+			float: left;
+			margin-top: 10px;
+			margin-right: 30px;
+			display: block;
+			overflow: hidden;
+			position: relative;
+			width: 210px;
+			height: 240px;
+			border: solid 1px #eaedf4;
+			border-radius: 4px;
+			box-sizing: border-box;
+			background-color: #f4f6fa;
+		}
+
+		#basic2 {
+			margin-left: 360pt;
+			text-align: center;
+			margin-top: 10px;
+			margin-right: 30px;
+			display: block;
+			overflow: hidden;
+			position: relative;
+			width: 210px;
+			height: 248px;
+			border: solid 1px #eaedf4;
+			border-radius: 4px;
+			box-sizing: border-box;
+			background-color: #f4f6fa;
+		}
+
+
+		#basic:hover {
+			cursor: pointer;
+			text-decoration: underline;
+			border-style: groove;
+		}
+
+		#basic2:hover {
+			cursor: pointer;
+			text-decoration: underline;
+			border-style: groove;
+		}
+
+		#mylocal {
+			font-size: 26pt;
+			line-height: 240%;
+		}
+
+		#box_proudct {
+			width: 1276px;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-inline-start: 40px;
+
+
+		}
+
+		#box_proudct2 {
+			border: 1px solid black;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0 20px;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			background: #fff;
+		}
+
+		#textbody {
+			position: relative;
+			top: 60px;
+		}
+
+		#text1 {
+			color: gray;
+		}
+
+		#btnbox {
+			height: 15pt;
+			border: 1px solid gray;
+			color: black;
+			background-color: rgba(0, 0, 0, 0);
+			top: 55pt;
+			position: relative;
+		}
+
+		#ad {
+			border-radius: 10pt;
+			line-height: 220%;
+			font-size: 18pt;
+			background-color: rgb(27, 27, 27);
+			color: #fff;
+		}
+
+		#ad:hover {
+			cursor: pointer;
+		}
+
+		#top {
+			font-size: 14pt;
+		}
+
+		#basic3 {
+			float: left;
+			margin-left: 1pt;
+			text-align: left;
+			margin-top: 10px;
+			margin-right: 24px;
+			display: block;
+			overflow: hidden;
+			position: relative;
+			width: 214px;
+			height: 150px;
+			border-top: double 5px rgb(207, 140, 116);
+			border-style: groove;
+			border-radius: 4px;
+			box-sizing: border-box;
+			background-color: whitesmoke;
+		}
+
+		#wrap_footer {
+			font-style: oblique;
+			font-size: 19pt;
+			line-height: 60pt;
+			text-align: center;
+			padding-bottom: 30px;
+			min-width: 960px;
+			border: solid #eaeaea;
+			border-width: 1px 0;
+			background: #f8f8f8;
+		}
+		#textbody2{
+			position: relative;
+			top: 29pt;
+		}
